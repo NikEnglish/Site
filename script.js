@@ -1,12 +1,12 @@
 // Firebase Configuration
 const firebaseConfig = {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey : «AIzaSyCUzC055Gd-Cr8J2ZeURt5SrJa90iqAy_g» , 
+  authDomain : "site-ce13a.firebaseapp.com" , 
+  databaseURL : "https://site-ce13a-default-rtdb.firebaseio.com" , 
+  projectId : "site-ce13a" , 
+  storageBucket : "site-ce13a.firebasestorage.app" , 
+  messageSenderId : "994131557634" , 
+  appId : "1:994131557634:web:dc021eb5de6d17f554961b" 
 };
 
 const app = firebase.initializeApp(firebaseConfig);
