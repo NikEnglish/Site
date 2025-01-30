@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфразвук - Игра</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        #game-screen {
+            display: none;
+        }
+
+        #difficulty-screen {
+            display: none;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        #waves-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .wave {
+            background-color: #6fa3ef;
+            color: white;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #quiz-game {
+            display: none;
+        }
+
+        .quiz-option {
+            background-color: #e7e7e7;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            width: 80%;
+        }
+
+        .quiz-option:hover {
+            background-color: #d7d7d7;
+        }
+
+        #trainer-info {
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #loading-screen {
+            display: none;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Прокрутка и другие эффекты */
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #intro-screen, #difficulty-screen, #quiz-game {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Intro Screen -->
+    <div id="intro-screen">
+        <h1>Добро пожаловать в игру о инфразвуке!</h1>
+        <form id="user-form">
+            <input type="text" id="name" placeholder="Введите ваше имя" required /><br>
+            <input type="text" id="nickname" placeholder="Введите ваш ник" required /><br>
+            <button class="btn" type="submit">Продолжить</button>
+        </form>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen">
+        <h2>Выберите сложность игры:</h2>
+        <button id="easy" class="btn">Легкий</button>
+        <button id="medium" class="btn">Средний</button>
+        <button id="hard" class="btn">Сложный</button>
+        <div id="waves-container"></div>
+        <p class="score" id="score">Счет: 0</p>
+    </div>
+
+    <!-- Difficulty Screen -->
+    <div id="difficulty-screen">
+        <h2>Выберите сложность:</h2>
+        <button id="easy" class="btn">Легкий</button>
+        <button id="medium" class="btn">Средний</button>
+        <button id="hard" class="btn">Сложный</button>
+    </div>
+
+    <!-- Quiz Game -->
+    <div id="quiz-game">
+        <h2>Викторина по инфразвуку</h2>
+        <div id="question-container"></div>
+        <p class="score" id="quiz-score">Счет: 0</p>
+    </div>
+
+    <!-- Trainer -->
+    <div id="trainer">
+        <h2>Тренажер инфразвука</h2>
+        <button class="btn" id="generate-wave">Сгенерировать волну</button>
+        <p id="trainer-info"></p>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <p>Загрузка...</p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
